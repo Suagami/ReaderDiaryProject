@@ -19,7 +19,8 @@ from django.urls import include, path
 
 
 api_urls = [
-    path('auth/', include('users.urls')),
+    path('auth/', include('users.urls.auth')),
+    path('user/', include('users.urls.users')),
     path('', include('books.urls')),
 ]
 
