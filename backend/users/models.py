@@ -18,6 +18,6 @@ class User(AbstractUser):
     date_of_birth = models.DateField("Дата рождения", blank=True, null=True)
 
     def __str__(self):
-        if self.first_name and self.second_name:
+        if self.first_name and self.last_name:
             return f"{self.first_name} {self.last_name}"
         return self.email
