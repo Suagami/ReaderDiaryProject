@@ -1,10 +1,13 @@
 from django.contrib.auth import authenticate
-from rest_framework import permissions, status
+from rest_framework import permissions, status, viewsets
 from rest_framework.authtoken.models import Token
+from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .serializers import UserSerializer
+from .models import User
+from .serializers import UserProfileSerializer, UserSerializer
 
 
 class UserRegistrationView(APIView):
@@ -30,3 +33,30 @@ class UserLoginView(APIView):
             token, _ = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
         return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        # Возвращает только текущего аутентифицированного пользователя
+        return User.objects.filter(id=self.request.user.id)
+
+    @action(detail=False, methods=['get', 'patch'], permission_classes=[IsAuthenticated])
+    def profile(self, request):
+        # Для метода GET возвращаем текущего пользователя
+        if request.method == 'GET':
+            user = request.user
+            serializer = self.get_serializer(user)
+            return Response(serializer.data)
+
+        # Для метода PATCH обновляем текущего пользователя
+        elif request.method == 'PATCH':
+            user = request.user
+            serializer = self.get_serializer(user, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -12,7 +12,12 @@ class BookViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # Возвращает книги только текущего пользователя
-        return Book.objects.filter(user=self.request.user)
+        queryset = super().get_queryset().filter(user=self.request.user)
+        if status := self.request.query_params.get('status'):
+            queryset = queryset.filter(status=status)
+        if (order := self.request.query_params.get('order')) and order == 'alphabet':
+            queryset = queryset.order_by('title')
+        return queryset
 
     def perform_create(self, serializer):
         # Автоматически устанавливает user как текущего пользователя при создании новой книги

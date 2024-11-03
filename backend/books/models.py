@@ -30,7 +30,6 @@ class Book(models.Model):
     )
     title = models.CharField('Название книги', max_length=255)
     author = models.CharField('Автор книги', max_length=255)
-    status = models.CharField()
     cover_image = models.ImageField('Обложка книги', upload_to='covers/', blank=True, null=True)
     rating = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)],
