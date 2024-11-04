@@ -6,7 +6,7 @@ import { useState } from 'react'
 // }
 
 const useHasAuth = () => {
-  const [hasAuth, setHasAuth] = useState<boolean>(true)
+  const [hasAuth, setHasAuth] = useState<boolean>(false)
 
   return {
     hasAuth,
