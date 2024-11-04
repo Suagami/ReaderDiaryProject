@@ -1,0 +1,26 @@
+.authWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.authWindow {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 72px 64px;
+  transform: none;
+  width: 450px;
+  height: 600px;
+}
+
+.authBackgroundWindow {
+  transform: matrix(1, -0.09, 0.09, 1, -0, 0);
+  background: rgba(255, 255, 255, 0.15);
+  transform-style: flat;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 126px;
+}
