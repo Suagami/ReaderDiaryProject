@@ -2,12 +2,10 @@ import React, { useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import useHasAuth from './hooks/auth/useHasAuth'
 
-import AuthPage from './pages/AuthPage/AuthPage'
-import MainPage from './pages/MainPage/MainPage'
+import MainLayout from './layouts/MainLayout/MainLayout'
+import AuthLayout from './layouts/AuthLayout/AuthLayout'
 
 import s from './AppPage.module.css'
-import MainLayout from './layouts/MainLayout/MainLAyout'
-import AuthLayout from './layouts/AuthLayout/AuthLayout'
 
 const AppPage: React.FC = () => {
   const { hasAuth } = useHasAuth()
