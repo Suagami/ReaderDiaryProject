@@ -16,7 +16,7 @@ const AuthPage: React.FC = () => {
       {/* -------------------------------------------------------------------- */}
 
       <button onClick={() => setHasAuth(true)}>
-        <Link to="/">Тестовый вход</Link>
+        <Link to="/home/main">Тестовый вход</Link>
       </button>
       {/* -------------------------------------------------------------------- */}
       <div className={s.authBackgroundWindow}></div>

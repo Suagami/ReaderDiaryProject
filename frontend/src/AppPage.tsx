@@ -6,6 +6,8 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import MainPage from './pages/MainPage/MainPage'
 
 import s from './AppPage.module.css'
+import MainLayout from './layouts/MainLayout/MainLAyout'
+import AuthLayout from './layouts/AuthLayout/AuthLayout'
 
 const AppPage: React.FC = () => {
   const { hasAuth } = useHasAuth()
@@ -20,8 +22,8 @@ const AppPage: React.FC = () => {
   return (
     <div className={s.mainAppWrapper}>
       <Routes>
-        <Route path="/auth" element={<AuthPage />} />
-        <Route path="/" element={<MainPage />} />
+        <Route path="/auth" element={<AuthLayout />} />
+        <Route path="/home/*" element={<MainLayout />} />
       </Routes>
     </div>
   )
