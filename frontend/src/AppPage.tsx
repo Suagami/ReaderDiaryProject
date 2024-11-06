@@ -23,7 +23,7 @@ const AppPage: React.FC = () => {
     <div className={s.mainAppWrapper}>
       <Routes>
         <Route path="/auth" element={<AuthLayout />} />
-        <Route path="/" element={<MainLayout />} />
+        <Route path="/home/*" element={<MainLayout />} />
       </Routes>
     </div>
   )

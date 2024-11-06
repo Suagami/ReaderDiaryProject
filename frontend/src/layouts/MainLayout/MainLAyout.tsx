@@ -8,7 +8,7 @@ const MainLayout: React.FC = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/main" element={<HomePage />} />
       </Routes>
     </div>
   )
