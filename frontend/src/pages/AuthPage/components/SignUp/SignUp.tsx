@@ -24,8 +24,6 @@ const SignUp: React.FC<SignUpProps> = (props) => {
 
   return (
     <div className={className}>
-      <div>Войти</div>
-      <div>Пожалуйста войдите в систему</div>
       <Input placeholder="Имя пользователя" setField={setNameField} />
       <Input placeholder="Email" setField={setMailField} />
       <Input placeholder="Введите пароль" setField={setPassField} />

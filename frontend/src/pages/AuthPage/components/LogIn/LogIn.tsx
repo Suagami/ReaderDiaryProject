@@ -20,10 +20,16 @@ const LogIn: React.FC<LogInProps> = (props) => {
 
   return (
     <div className={className}>
-      <div>Войти</div>
-      <div>Пожалуйста войдите в систему</div>
-      <Input placeholder="Логин" setField={setLoginField} />
-      <Input placeholder="Пароль" setField={setPassField} />
+      <Input 
+        className={s.inputWrapper}
+        placeholder="Логин" 
+        setField={setLoginField}
+      />
+      <Input 
+        className={s.inputWrapper}
+        placeholder="Пароль" 
+        setField={setPassField} 
+      />
       <button onClick={() => handleClick()}>Войти</button>
     </div>
   )
