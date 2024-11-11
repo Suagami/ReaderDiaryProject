@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "PT Serif";
+  font-weight: 700;
+  font-style: normal;
+  src: local("PT Serif Bold"), local("PTSerif-Bold"),
+    url("../../../../../public/fonts/PT-Serif/PTSerif-Bold.woff2") format("woff2"),
+    url("../../../../../public/fonts/PT-Serif/PTSerif-Bold.woff") format("woff"),
+    url("../../../../../public/fonts/PT-Serif/PTSerif-Bold.eot") format("eot");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 500;
+  font-style: normal;
+  src: local("Raleway Medium"), local("Raleway-Medium"),
+    url("../../../../../public/fonts/Raleway/Raleway-Medium.woff2") format("woff2"),
+    url("../../../../../public/fonts/Raleway/Raleway-Medium.woff") format("woff"),
+    url("../../../../../public/fonts/Raleway/Raleway-Medium.eot") format("eot");
+  font-display: swap;
+}
+
+.headerWrapper {
+  background-color: #c29b70;
+  height: 102px;
+  padding: 16px 48px 16px 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftHeaderItems {
+  font-family: "PT Serif", sans-serif;
+  font-size: 36px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4B3608;
+}
+
+.rightHeaderItems {
+  display: flex;
+  gap: 48px;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  color: black;
+
+}
+
+.profileButton {
+  width: 70px;
+  height: 70px;
+}
