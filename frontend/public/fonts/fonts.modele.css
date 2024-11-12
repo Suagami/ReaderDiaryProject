@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "PT Serif";
+    font-weight: 700;
+    font-style: normal;
+    src: local("PT Serif Bold"), local("PTSerif-Bold"),
+        url("PT-Serif/PTSerif-Bold.woff2") format("woff2"),
+        url("PT-Serif/PTSerif-Bold.woff") format("woff"),
+        url("PT-Serif/PTSerif-Bold.eot") format("eot");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-weight: 500;
+    font-style: normal;
+    src: local("Raleway Medium"), local("Raleway-Medium"),
+        url("Raleway/Raleway-Medium.woff2") format("woff2"),
+        url("Raleway/Raleway-Medium.woff") format("woff"),
+        url("Raleway/Raleway-Medium.eot") format("eot");
+    font-display: swap;
+}
