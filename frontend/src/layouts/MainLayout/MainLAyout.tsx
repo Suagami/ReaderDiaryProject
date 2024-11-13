@@ -11,7 +11,7 @@ const MainLayout: React.FC = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/main" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/lastRead" element={<LastReadPage />} />
         <Route path="/wantRead" element={<WantReadPage />} />
         <Route path="/readNow" element={<ReadNowPage />} />
