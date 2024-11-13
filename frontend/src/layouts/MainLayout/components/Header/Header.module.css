@@ -1,0 +1,39 @@
+.headerWrapper {
+  background-color: #c29b70;
+  height: 72px;
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftHeaderItems {
+  font-family: 'PT Serif', sans-serif;
+  font-size: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-weight: 700;
+  color: #4b3608;
+}
+
+.rightHeaderItems {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.rightHeaderItem {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  color: black;
+}
+
+.rightHeaderItem:hover {
+  color: #ecdfc3;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
