@@ -8,7 +8,11 @@ const Header: React.FC = () => {
     <div className={s.headerWrapper}>
       <Link to="/">
         <div className={s.leftHeaderItems}>
-          <img src="../../../../../public/imges/pen.png" alt="pen.png" />
+          <img
+            className={s.icon}
+            src="../../../../../public/imges/pen.png"
+            alt="pen.png"
+          />
           <div>Книжная полка</div>
         </div>
       </Link>
@@ -22,7 +26,7 @@ const Header: React.FC = () => {
         <Link to="/readNow">
           <div className={s.rightHeaderItem}>Читаю сейчас</div>
         </Link>
-        <button className={s.profileButton} >
+        <button className={s.icon}>
           <img src="../../../../../public/imges/logo4.png" alt="logo4.png" />
         </button>
       </div>

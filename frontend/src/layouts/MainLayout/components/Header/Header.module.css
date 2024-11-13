@@ -1,6 +1,6 @@
 .headerWrapper {
   background-color: #c29b70;
-  height: 124px;
+  height: 72px;
   padding: 16px 48px;
   display: flex;
   align-items: center;
@@ -8,13 +8,13 @@
 }
 
 .leftHeaderItems {
-  font-family: "PT Serif", sans-serif;
-  font-size: 48px;
+  font-family: 'PT Serif', sans-serif;
+  font-size: 36px;
   display: flex;
-  gap: 48px;
+  gap: 16px;
   align-items: center;
   font-weight: 700;
-  color: #4B3608;
+  color: #4b3608;
 }
 
 .rightHeaderItems {
@@ -24,16 +24,16 @@
 }
 
 .rightHeaderItem {
-  font-family: "Raleway", sans-serif;
-  font-size: 32px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
   color: black;
 }
 
 .rightHeaderItem:hover {
-  color: #ECDFC3;
+  color: #ecdfc3;
 }
 
-.profileButton {
-  width: 70px;
-  height: 70px;
+.icon {
+  width: 48px;
+  height: 48px;
 }
