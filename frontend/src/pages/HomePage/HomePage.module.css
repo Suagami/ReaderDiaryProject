@@ -1,0 +1,17 @@
+.homePageWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ECDFC3;
+  display: flex;
+  justify-content: center;
+  padding: 72px 484px;
+}
+
+.homeContentColumn {
+  width: 100vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
