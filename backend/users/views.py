@@ -30,7 +30,11 @@ class UserRegistrationView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response({"data": serializer.data}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        for field, error in serializer.errors.items():
+            return Response(
+                {'error': f'Некорректное значение {field}: {error[0]}'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 
 class UserLoginView(APIView):
@@ -71,4 +75,8 @@ class UserProfileViewSet(viewsets.ModelViewSet):
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            for field, error in serializer.errors.items():
+                return Response(
+                    {'error': f'Некорректное значение {field}: {error[0]}'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
