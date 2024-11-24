@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react'
 import Input from '../../../../UI/Input/Input'
 
 import s from './LogIn.module.css'
+import Button from '../../../../UI/Button/Button'
 
 type LogInProps = {
   className?: string
@@ -20,17 +21,22 @@ const LogIn: React.FC<LogInProps> = (props) => {
 
   return (
     <div className={className}>
-      <Input 
+      <Input
         className={s.inputWrapper}
-        placeholder="Логин" 
+        placeholder="Логин"
         setField={setLoginField}
       />
-      <Input 
+      <Input
         className={s.inputWrapper}
-        placeholder="Пароль" 
-        setField={setPassField} 
+        placeholder="Пароль"
+        setField={setPassField}
       />
-      <button onClick={() => handleClick()}>Войти</button>
+      <Button
+        className={s.inputWrapper}
+        text="Войти"
+        style="black"
+        onClick={() => handleClick()}
+      />
     </div>
   )
 }

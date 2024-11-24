@@ -1,0 +1,37 @@
+.lightBeigeButton {
+}
+
+.gradientButtonWrapper {
+  background: linear-gradient(
+    to right,
+    rgba(233, 192, 125, 1) 0%,
+    rgba(160, 118, 83, 1) 100%
+  );
+  width: 100%;
+  padding: 16px;
+  color: black;
+}
+
+.blackButtonWrapper {
+  background-color: black;
+  padding: 16px 72px;
+  color: white;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonIcon {
+  margin: 3px 8px 3px 3px;
+  height: 12px;
+  width: 12px;
+}
+
+.buttonText {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+}
