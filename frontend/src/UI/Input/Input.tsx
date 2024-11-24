@@ -13,9 +13,7 @@ const Input: React.FC<InputProps> = (props) => {
   const { className, placeholder, setField } = props
 
   return (
-    <div 
-      className={cx(className, s.inputWrapper)}
-    >
+    <div className={cx(className, s.inputWrapper)}>
       <input
         className={s.inputText}
         placeholder={placeholder}
