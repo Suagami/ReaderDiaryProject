@@ -14,6 +14,18 @@ class UserRegistrationView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
+        email = request.data.get('email')
+        username = request.data.get('username')
+        if User.objects.filter(email=email).exists():
+            return Response(
+                {'error': 'Пользователь с таким email уже существует'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        elif User.objects.filter(username=username).exists():
+            return Response(
+                {'error': 'Пользователь с таким именем уже существует'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -32,7 +44,7 @@ class UserLoginView(APIView):
         if user is not None:
             token, _ = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
-        return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+        return Response({"error": "Неверные учетные данные"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
