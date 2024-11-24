@@ -42,3 +42,15 @@
   font-size: 16px;
   text-align: center;
 }
+
+.textButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonText {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+}

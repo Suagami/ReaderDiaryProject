@@ -22,11 +22,13 @@ const AuthPage: React.FC = () => {
           {isLogIn ? 'Пожалуйста войдите в систему' : 'Зарегистрируйтесь'}
         </div>
         {isLogIn ? <LogIn /> : <SignUp />}
-        <ButtonText
-          className={s.subTitle}
-          onClick={() => setIsLogIn(!isLogIn)}
-          text={isLogIn ? 'Зарегистрироваться' : 'Войти'}
-        />
+        <div className={s.textButtonWrapper}>
+          <ButtonText
+            className={s.buttonText}
+            onClick={() => setIsLogIn(!isLogIn)}
+            text={isLogIn ? 'Зарегистрироваться' : 'Войти'}
+          />
+        </div>
       </div>
     </div>
   )
