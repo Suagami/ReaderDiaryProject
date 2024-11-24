@@ -33,21 +33,25 @@ const SignUp: React.FC<SignUpProps> = (props) => {
         className={s.inputWrapper}
         placeholder="Имя пользователя"
         setField={setNameField}
+        fieldValue={nameField}
       />
       <Input
         className={s.inputWrapper}
         placeholder="Email"
         setField={setMailField}
+        fieldValue={mailField}
       />
       <Input
         className={s.inputWrapper}
         placeholder="Введите пароль"
         setField={setPassField}
+        fieldValue={passField}
       />
       <Input
         className={s.inputWrapper}
         placeholder="Подтвердите пароль"
         setField={setPassCheckField}
+        fieldValue={passCheckField}
       />
       <Button
         className={s.inputWrapper}
