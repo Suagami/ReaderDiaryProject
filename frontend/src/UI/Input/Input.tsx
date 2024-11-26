@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = (props) => {
     <div className={cx(className, s.inputWrapper)}>
       <div
         className={s.placeholder}
-        style={{ display: fieldValue ? 'block' : 'none' }}
+        style={{ display: fieldValue !== '' ? 'block' : 'none' }}
       >
         {placeholder}
       </div>
