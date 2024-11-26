@@ -1,14 +1,14 @@
 import cx from 'classnames'
 import React from 'react'
 
-import s from './ColumnSectionTitle.module.css'
+import s from './SectionTitle.module.css'
 
-type ColumnSectionTitleProps = {
+type SectionTitleProps = {
     sectionTitle: string
     className?: string
 }
 
-const ColumnSectionTitle: React.FC<ColumnSectionTitleProps> = (props) => {
+const SectionTitle: React.FC<SectionTitleProps> = (props) => {
     const { sectionTitle, className } = props
 
     return ( <div className={cx(className, s.title)}>
@@ -16,5 +16,5 @@ const ColumnSectionTitle: React.FC<ColumnSectionTitleProps> = (props) => {
     </div>)
 }
 
-export default ColumnSectionTitle
+export default SectionTitle
 
