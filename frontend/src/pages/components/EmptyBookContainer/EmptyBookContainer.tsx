@@ -17,7 +17,7 @@ const EmptyBookContainer: React.FC<EmptyBookContainerProps> = (props) => {
             Здесь пока что пусто
         </div>
         {/* Добавить линьку на страницу добавления книги */}
-        <NavigationButton title='Добавить книгу' route='' style={false}/>
+        <NavigationButton title='Добавить книгу' route=''/>
     </div>)
 }
 
