@@ -1,7 +1,6 @@
 FROM node:18
 
 COPY frontend /app/frontend
-COPY vite.config.docker.ts /app/frontend/vite.config.ts
 
 WORKDIR /app/frontend
 
