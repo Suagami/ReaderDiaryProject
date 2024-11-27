@@ -1,4 +1,8 @@
 # Читательский дневник
+## Запуск docker-compose
+1) Выполнить команду docker-compose up --build -d
+2) Доступ к приложению будет по адрусу `http://localhost:5173`
+
 ## Backend
 ## Запуск локального сервера
 1) Установить Python 3.12 (https://www.python.org/downloads/release/python-3127/), при установке ОБЯЗАТЕЛЬНО выбрать параметр "Add Python to environment variables", после установки желательно перезагрузить компьютер
@@ -27,6 +31,6 @@
 2) Намеренная остановка через `ctrl + c`, в случае `ctrl + z` необходимо через powershell останавливать скрытый процесс, лио перезагружать компьютер
 
 ## Дополнительная информация по проекту
-1) [Ссылка на дизайн проекта](https://design.penpot.app/#/workspace/5e250d03-b345-8112-8005-17de7456b71f/f4c411c4-dd43-81ae-8005-17de86fb5d12?page-id=f4c411c4-dd43-81ae-8005-17de86fb5d13&layout=layers)
+1) [Ссылка на дизайн проекта](https://design.penpot.app/#/workspace/5e250d03-b345-8112-8005-17de7456b71f/f4c411c4-dd43-81ae-8005-17de86fb5d12)
 2) [Ссылка на таск-менеджер](https://mtfaer.kaiten.ru/space/457867)
 
