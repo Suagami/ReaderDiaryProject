@@ -1,0 +1,15 @@
+.allLink {
+    display: flex;
+    justify-content: end;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.label {
+    color: black;
+}
+
+.label:hover {
+    text-decoration: underline;
+}

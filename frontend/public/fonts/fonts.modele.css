@@ -19,3 +19,14 @@
         url("Raleway/Raleway-Medium.eot") format("eot");
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Raleway";
+    font-weight: 400;
+    font-style: normal;
+    src: local("Raleway Regular"), local("Raleway-Regular"),
+        url("Raleway/Raleway-Regular.woff2") format("woff2"),
+        url("Raleway/Raleway-Regular.woff") format("woff"),
+        url("Raleway/Raleway-Regular.eot") format("eot");
+    font-display: swap;
+}
