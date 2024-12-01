@@ -1,41 +1,60 @@
-// import { useState, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 
-// type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'
-// //
-// interface UseQueryResult<T> {
-//   data: T | null
-//   isFetching: boolean
-//   error: string | null
-// }
+export type Options = {
+  url: string
+  method: 'GET' | 'POST' | 'PUT' | 'PATCH'
+  body?: Record<string, any>
+  headers?: Record<string, string>
+}
 
-// function useQuery<T>(url: string, body: HttpMethod = 'GET'): UseQueryResult<T> {
-//   const [data, setData] = useState<T | null>(null)
-//   const [isFetching, setIsFetching] = useState<boolean>(true)
-//   const [error, setError] = useState<string | null>(null)
+const useQuery = <T extends Record<string, any>>(options: Options) => {
+  const [data, setData] = useState<T | null>(null)
+  const [isFetching, setIsFetching] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setIsFetching(true)
-//       setError(null)
+  const { url, method, body, headers } = options
+  const token = localStorage.getItem('authToken')
 
-//       try {
-//         const response = await fetch(url, body)
-//         if (!response.ok) {
-//           throw new Error(`HTTP error! Status: ${response.status}`)
-//         }
-//         const result = await response.json()
-//         setData(result)
-//       } catch (err) {
-//         setError((err as Error).message)
-//       } finally {
-//         setIsFetching(false)
-//       }
-//     }
+  const defaultHeaders = {
+    'Content-Type': 'application/json',
+    ...(token && { Authorization: token }),
+  }
 
-//     fetchData()
-//   }, [url, body])
+  const queryParams = {
+    method: method,
+    headers: {
+      ...defaultHeaders,
+      ...headers,
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  }
 
-//   return { data, isFetching, error }
-// }
+  const customFetch = useCallback(async () => {
+    setIsFetching(true)
+    setError(null)
 
-// export default useQuery
+    try {
+      const response = await fetch(url, queryParams)
+      if (!response.ok) {
+        const err = await response.json()
+        throw new Error(`${err.error}`)
+      }
+
+      const result = await response.json()
+      setData(result)
+    } catch (err) {
+      setError((err as Error).message)
+    }
+
+    setIsFetching(false)
+  }, [url, method, body, headers])
+
+  return {
+    customFetch,
+    data: data,
+    error,
+    isFetching,
+  }
+}
+
+export default useQuery
