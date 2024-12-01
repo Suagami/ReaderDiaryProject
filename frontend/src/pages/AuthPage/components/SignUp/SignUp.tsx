@@ -26,7 +26,7 @@ const SignUp: React.FC<SignUpProps> = (props) => {
   }, [nameField, mailField, passField, passCheckField])
 
   useEffect(() => {
-    if (data) {
+    if (data?.id) {
       setIsLogIn(true)
     }
   }, [data])
@@ -64,6 +64,9 @@ const SignUp: React.FC<SignUpProps> = (props) => {
         onClick={() => handleClick()}
       />
       {error && <Tooltip text={`Ошибка: ${error}`} />}
+      {data?.id && (
+        <Tooltip text={`Вы успешно зарегистрировались! Пожалуйста войдите`} />
+      )}
     </div>
   )
 }
