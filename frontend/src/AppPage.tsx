@@ -14,6 +14,8 @@ const AppPage: React.FC = () => {
   useEffect(() => {
     if (!hasAuth) {
       navigate('/auth')
+    } else {
+      navigate('/')
     }
   }, [hasAuth])
 

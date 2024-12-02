@@ -1,9 +1,39 @@
-import useQuery from '../useQuery'
+import { useEffect } from 'react'
+import useQuery, { Options } from '../useQuery'
+import { log } from 'console'
+import useHasAuth from './useHasAuth'
 
-const useLogIn = () => {
-  const {} = useQuery(queryUrl)
+type LogInData = {
+  token: string
+  error?: string
+}
 
-  return {}
+const useLogIn = (username: string, password: string) => {
+  const { setHasAuth } = useHasAuth()
+
+  const queryOptions: Options = {
+    url: 'api/auth/login',
+    method: 'POST',
+    body: {
+      username: username,
+      password: password,
+    },
+  }
+
+  const { customFetch, data, error } = useQuery<LogInData>(queryOptions)
+
+  useEffect(() => {
+    if (data?.token) {
+      localStorage.setItem('authToken', data.token)
+      setHasAuth(true)
+    }
+  }, [data])
+
+  return {
+    logIn: customFetch,
+    data,
+    error,
+  }
 }
 
 export default useLogIn

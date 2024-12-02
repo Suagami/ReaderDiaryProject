@@ -22,7 +22,11 @@ const SignUp: React.FC<SignUpProps> = (props) => {
   const { register, error, data } = useRegister(mailField, nameField, passField)
 
   const handleClick = useCallback(async () => {
-    await register()
+    if (passField === passCheckField) {
+      await register()
+    } else {
+      console.log('!=')
+    }
   }, [nameField, mailField, passField, passCheckField])
 
   useEffect(() => {
