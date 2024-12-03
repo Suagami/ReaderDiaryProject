@@ -1,7 +1,9 @@
 import React from 'react'
 
+import EmptyPage from '../components/EmptyPage/EmptyPage'
+
 const WantReadPage: React.FC = () => {
-  return <div>WantReadPage</div>
+  return <EmptyPage route='' />
 }
 
 export default WantReadPage

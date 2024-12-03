@@ -1,0 +1,22 @@
+.blankPageWrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 268px 484px;
+}
+
+.blankPageContainer {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 128px 312px;
+    gap: 24px;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .5);
+}
