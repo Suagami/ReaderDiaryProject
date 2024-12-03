@@ -36,6 +36,7 @@ const LogIn: React.FC<LogInProps> = (props) => {
         placeholder="Пароль"
         setField={setPassField}
         fieldValue={passField}
+        pass
       />
       <Button
         className={s.inputWrapper}

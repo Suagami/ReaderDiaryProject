@@ -54,12 +54,14 @@ const SignUp: React.FC<SignUpProps> = (props) => {
         placeholder="Введите пароль"
         setField={setPassField}
         fieldValue={passField}
+        pass
       />
       <Input
         className={s.inputWrapper}
         placeholder="Подтвердите пароль"
         setField={setPassCheckField}
         fieldValue={passCheckField}
+        pass
       />
       <Button
         className={s.inputWrapper}

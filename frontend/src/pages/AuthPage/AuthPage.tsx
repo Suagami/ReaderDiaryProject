@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import useHasAuth from '../../hooks/auth/useHasAuth'
 
 import LogIn from './components/LogIn/LogIn'
 import SignUp from './components/SignUp/SignUp'
@@ -10,7 +8,6 @@ import s from './AuthPage.module.css'
 
 const AuthPage: React.FC = () => {
   const [isLogIn, setIsLogIn] = useState<boolean>(true)
-  const { hasAuth, setHasAuth } = useHasAuth()
 
   return (
     <div className={s.authWrapper}>

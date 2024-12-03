@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import useQuery, { Options } from '../useQuery'
-import { log } from 'console'
-import useHasAuth from './useHasAuth'
+import useAuthToken from './useAuthToken'
 
 type LogInData = {
   token: string
@@ -9,8 +8,7 @@ type LogInData = {
 }
 
 const useLogIn = (username: string, password: string) => {
-  const { setHasAuth } = useHasAuth()
-
+  const { setToken } = useAuthToken()
   const queryOptions: Options = {
     url: 'api/auth/login',
     method: 'POST',
@@ -24,8 +22,8 @@ const useLogIn = (username: string, password: string) => {
 
   useEffect(() => {
     if (data?.token) {
-      localStorage.setItem('authToken', data.token)
-      setHasAuth(true)
+      setToken(data.token)
+      console.log('authToken added', data.token)
     }
   }, [data])
 

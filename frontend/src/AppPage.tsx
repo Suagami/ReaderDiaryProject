@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import useHasAuth from './hooks/auth/useHasAuth'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 import MainLayout from './layouts/MainLayout/MainLAyout'
 import AuthLayout from './layouts/AuthLayout/AuthLayout'
@@ -8,17 +7,6 @@ import AuthLayout from './layouts/AuthLayout/AuthLayout'
 import s from './AppPage.module.css'
 
 const AppPage: React.FC = () => {
-  const { hasAuth } = useHasAuth()
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (!hasAuth) {
-      navigate('/auth')
-    } else {
-      navigate('/')
-    }
-  }, [hasAuth])
-
   return (
     <div className={s.mainAppWrapper}>
       <Routes>
