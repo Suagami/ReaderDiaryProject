@@ -1,18 +1,13 @@
 .blankPageWrapper {
-    height: 100%;
+    height: 80%;
     display: flex;
     justify-content: center;
-    padding: 268px 484px;
+    align-items: center;
 }
 
 .blankPageContainer {
-    height: 100%;
-    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 128px 312px;
     gap: 24px;
 
     font-family: 'Raleway', sans-serif;
