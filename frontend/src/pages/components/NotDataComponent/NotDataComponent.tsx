@@ -1,20 +1,15 @@
 import React from 'react'
 import NavigationButton from '../../../UI/NavigationButton/NavigationButton'
 
-import s from './EmptyPage.module.css'
+import s from './NotDataComponent.module.css'
 
-type EmptyPageProps = {
-    route: string
-}
-
-const EmptyPage: React.FC<EmptyPageProps> = (props) => {
-    const {route} = props
+const NotDataComponent: React.FC = () => {
     return <div className={s.blankPageWrapper}>
         <div className={s.blankPageContainer}>
                 Здесь пока что пусто
-            <NavigationButton title='Добавить книгу' route={route}/>
+            <NavigationButton title='Добавить книгу' route="/*" />
         </div>
     </div>
 }
 
-export default EmptyPage
+export default NotDataComponent

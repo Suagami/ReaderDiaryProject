@@ -1,9 +1,9 @@
 import React from 'react'
 
-import EmptyPage from '../components/EmptyPage/EmptyPage'
+import NotDataComponent from '../components/NotDataComponent/NotDataComponent'
 
 const LastReadPage: React.FC = () => {
-  return <EmptyPage route=''/>
+  return <NotDataComponent />
 }
 
 export default LastReadPage

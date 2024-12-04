@@ -1,9 +1,9 @@
 import React from 'react'
 
-import EmptyPage from '../components/EmptyPage/EmptyPage'
+import NotDataComponent from '../components/NotDataComponent/NotDataComponent'
 
 const WantReadPage: React.FC = () => {
-  return <EmptyPage route='' />
+  return <NotDataComponent />
 }
 
 export default WantReadPage
