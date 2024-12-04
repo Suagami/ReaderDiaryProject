@@ -6,9 +6,11 @@ import LastReadPage from '../../pages/LastReadPage/LastReadPage'
 import WantReadPage from '../../pages/WantReadPage/WantReadPage'
 import ReadNowPage from '../../pages/ReadNowPage/ReadNowPage'
 
+import s from './MainLayout.module.css'
+
 const MainLayout: React.FC = () => {
   return (
-    <div>
+    <div className={s.mainLayoutWrapper}>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

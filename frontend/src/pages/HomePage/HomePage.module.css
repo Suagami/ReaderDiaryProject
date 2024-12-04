@@ -1,7 +1,5 @@
 .homePageWrapper {
-  width: 100%;
   height: 100%;
-  background-color: #ECDFC3;
   display: flex;
   justify-content: center;
   padding: 72px 484px;
