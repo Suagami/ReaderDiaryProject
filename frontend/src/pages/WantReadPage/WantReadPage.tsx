@@ -1,7 +1,9 @@
 import React from 'react'
 
+import NotDataComponent from '../components/NotDataComponent/NotDataComponent'
+
 const WantReadPage: React.FC = () => {
-  return <div>WantReadPage</div>
+  return <NotDataComponent />
 }
 
 export default WantReadPage
