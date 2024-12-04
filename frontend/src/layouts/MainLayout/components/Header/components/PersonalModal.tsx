@@ -15,8 +15,10 @@ const PersonalModal: React.FC<PersonalModalProps> = (props) => {
 
   const modalContent = (
     <>
+      <div>Тут контент модалки!</div>
       <div>
-        тут контент модалки сами сверстаете, тольк кнопку разлогина не меняйте
+        Вёрста за вами, только onClick на кнопке разлогина не меняйте, ну и
+        кнопку оставьте
       </div>
       <Button
         text="Выйти"
