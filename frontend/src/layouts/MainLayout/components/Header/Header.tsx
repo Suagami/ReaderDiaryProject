@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import s from './Header.module.css'
+import PersonalModal from './components/PersonalModal'
 
 const Header: React.FC = () => {
   return (
@@ -26,9 +27,7 @@ const Header: React.FC = () => {
         <Link to="/readNow">
           <div className={s.rightHeaderItem}>Читаю сейчас</div>
         </Link>
-        <button className={s.icon}>
-          <img src="../../../../../public/imges/logo4.png" alt="logo4.png" />
-        </button>
+        <PersonalModal className={s.icon}></PersonalModal>
       </div>
     </div>
   )

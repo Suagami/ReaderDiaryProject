@@ -14,6 +14,7 @@ type ButtonProps = {
   hasAddIcon?: boolean
   size?: buttonSize
   href?: string
+  disabled?: boolean
   onClick?: () => void
 }
 
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     className,
     style = 'gradient',
     hasAddIcon = false,
+    disabled = false,
     size = 'full',
     text,
     href,
@@ -45,6 +47,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         width: size === 'full' ? '100%' : '',
       }}
       onClick={href ? () => navigate(href) : onClick}
+      disabled={disabled}
     >
       <div className={s.buttonContent}>
         <div style={{ display: hasAddIcon ? '' : 'none' }}>

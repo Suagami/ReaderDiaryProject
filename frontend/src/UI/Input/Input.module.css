@@ -23,3 +23,13 @@
   top: -8px;
   left: 24px;
 }
+
+.visibilityIcon {
+  opacity: 50%;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 16px;
+  right: 16px;
+  top: 16px;
+}

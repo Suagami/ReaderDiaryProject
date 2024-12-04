@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import cx from 'classnames'
 import styles from './Tooltip.module.css'
 
 interface TooltipProps {
+  className?: string
   text: string | null
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ text }) => {
+const Tooltip: React.FC<TooltipProps> = (props) => {
+  const { className, text } = props
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -21,7 +24,10 @@ const Tooltip: React.FC<TooltipProps> = ({ text }) => {
 
   return (
     <div
-      className={`${styles.tooltipContainer} ${isVisible ? styles.show : ''}`}
+      className={cx(
+        `${styles.tooltipContainer} ${isVisible ? styles.show : ''}`,
+        className
+      )}
     >
       {text && `${text}`}
     </div>

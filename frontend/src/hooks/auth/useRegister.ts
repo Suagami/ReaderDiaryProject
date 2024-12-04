@@ -7,6 +7,7 @@ type registerData = {
     username: string
     avatar: any
   }
+  error?: string
 }
 
 const useRegister = (email: string, username: string, password: string) => {

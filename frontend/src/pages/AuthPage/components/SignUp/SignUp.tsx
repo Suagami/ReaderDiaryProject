@@ -22,7 +22,11 @@ const SignUp: React.FC<SignUpProps> = (props) => {
   const { register, error, data } = useRegister(mailField, nameField, passField)
 
   const handleClick = useCallback(async () => {
-    await register()
+    if (passField === passCheckField) {
+      await register()
+    } else {
+      console.log('!=')
+    }
   }, [nameField, mailField, passField, passCheckField])
 
   useEffect(() => {
@@ -50,12 +54,14 @@ const SignUp: React.FC<SignUpProps> = (props) => {
         placeholder="Введите пароль"
         setField={setPassField}
         fieldValue={passField}
+        pass
       />
       <Input
         className={s.inputWrapper}
         placeholder="Подтвердите пароль"
         setField={setPassCheckField}
         fieldValue={passCheckField}
+        pass
       />
       <Button
         className={s.inputWrapper}
