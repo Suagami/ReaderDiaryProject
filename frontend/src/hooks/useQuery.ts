@@ -17,7 +17,7 @@ const useQuery = <T extends Record<string, any>>(options: Options) => {
 
   const defaultHeaders = {
     'Content-Type': 'application/json',
-    ...(token && { Authorization: token }),
+    ...(token && { Authorization: `Token ${token}` }),
   }
 
   const queryParams = {

@@ -5,6 +5,7 @@ import HomePage from '../../pages/HomePage/HomePage'
 import LastReadPage from '../../pages/LastReadPage/LastReadPage'
 import WantReadPage from '../../pages/WantReadPage/WantReadPage'
 import ReadNowPage from '../../pages/ReadNowPage/ReadNowPage'
+import AddBookPage from '../../pages/AddBookPage/AddBookPage'
 
 import s from './MainLayout.module.css'
 
@@ -17,6 +18,7 @@ const MainLayout: React.FC = () => {
         <Route path="/lastRead" element={<LastReadPage />} />
         <Route path="/wantRead" element={<WantReadPage />} />
         <Route path="/readNow" element={<ReadNowPage />} />
+        <Route path="/addBook" element={<AddBookPage />} />
       </Routes>
     </div>
   )

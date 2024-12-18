@@ -7,7 +7,7 @@ const NotDataComponent: React.FC = () => {
     return <div className={s.blankPageWrapper}>
         <div className={s.blankPageContainer}>
                 Здесь пока что пусто
-            <NavigationButton title='Добавить книгу' route="/*" />
+            <NavigationButton title='Добавить книгу' route={"/addbook"} />
         </div>
     </div>
 }
