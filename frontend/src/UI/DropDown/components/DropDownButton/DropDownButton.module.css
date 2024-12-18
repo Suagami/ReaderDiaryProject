@@ -1,0 +1,41 @@
+.closedButtonWrapper{
+    font-family: 'Raleway';
+    font-size: 18px;
+    font-weight: 400;
+
+    background-color: #f6efe1;
+    border-radius: 10px;
+    border: 2px solid #4B3608;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 24px;
+
+    cursor: pointer;
+}
+
+.closedButtonWrapper:hover{
+    background-color: #c29b70;
+}
+
+.openedButtonWrapper{
+    font-family: 'Raleway';
+    font-size: 18px;
+    font-weight: 400;
+    
+    background-color: #f6efe1;
+    border-radius: 10px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 24px;
+    
+    cursor: pointer;
+}
+
+.openedButtonWrapper:hover{
+    background-color: #c29b70;
+    border: 2px solid #4B3608;
+}

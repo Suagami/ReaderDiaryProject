@@ -6,9 +6,9 @@ from users.models import User
 
 class Book(models.Model):
     STATUS_CHOICES = [
-        ('planning', 'Планирую прочесть'),
-        ('reading', 'Читаю'),
-        ('finished', 'Прочитана'),
+        ('planning', 'Хочу прочитать'),
+        ('reading', 'Читаю сейчас'),
+        ('finished', 'Прочитанное'),
     ]
 
     GENRE_CHOICES = [

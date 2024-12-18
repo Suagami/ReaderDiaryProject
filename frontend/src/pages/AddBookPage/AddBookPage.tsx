@@ -7,10 +7,8 @@ import s from './AddBookPage.module.css'
 
 const AddBookPage: React.FC = () => {
     return <div className={s.addBookPageWrapper}>
-        <div className={s.addBookPageContainer}>
-            <SectionTitle sectionTitle='Рецензия' />
-            <AddBookForm />
-        </div>
+        <SectionTitle sectionTitle='Рецензия' />
+        <AddBookForm />
     </div>
 }
 

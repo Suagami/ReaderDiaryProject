@@ -7,11 +7,12 @@ type bookData = {
     bookAuthor: string
     mainIdea: string
     myAttitude: string
+    selectedItem: string
   }
   error?: string
 }
 
-const useCreateBook = (bookName: string, bookAuthor: string, mainIdea: string, myAttitude: string) => {
+const useCreateBook = (bookName: string, bookAuthor: string, mainIdea: string, myAttitude: string, selectedItem: string) => {
   const queryOptions: Options = {
     url: '/api/books/',
     method: 'POST',
@@ -20,6 +21,7 @@ const useCreateBook = (bookName: string, bookAuthor: string, mainIdea: string, m
         author: bookAuthor,
         main_idea: mainIdea,
         user_opinion: myAttitude,
+        STATUS_CHOICES: selectedItem,
     },
   }
 
