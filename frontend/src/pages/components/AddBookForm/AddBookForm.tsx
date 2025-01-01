@@ -71,12 +71,17 @@ const AddBookForm: React.FC = () => {
             className={s.dropDownWrapper}
             title={`${selectedItemField ? selectedItemField : "Добавить"}`}
             isHaveIcon={true}
-            contant={<>{
-                items.map(item => <DropDownRow
-                                    item={item}
-                                    setField={setSelectedItem}
-                                    ></DropDownRow>)
-            }</>}
+            contant={
+                <>
+                    {
+                        items.map(item => 
+                            <DropDownRow
+                                item={item}
+                                setField={setSelectedItem}
+                            />)
+                    }
+                </>
+            }
         />
         <Link to={`${linkTo()}`}>
         <Button

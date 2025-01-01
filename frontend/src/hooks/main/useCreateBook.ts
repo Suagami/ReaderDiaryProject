@@ -13,6 +13,21 @@ type bookData = {
 }
 
 const useCreateBook = (bookName: string, bookAuthor: string, mainIdea: string, myAttitude: string, selectedItem: string) => {
+  switch (selectedItem) {
+    case "Прочитанное": {
+      selectedItem = "finished";
+      break;
+    }
+    case "Хочу прочитать": {
+      selectedItem = "planning";
+      break;
+    }
+    case "Читаю сейчас": {
+      selectedItem = "reading";
+      break;
+    }
+  }
+  
   const queryOptions: Options = {
     url: '/api/books/',
     method: 'POST',
@@ -21,7 +36,7 @@ const useCreateBook = (bookName: string, bookAuthor: string, mainIdea: string, m
         author: bookAuthor,
         main_idea: mainIdea,
         user_opinion: myAttitude,
-        STATUS_CHOICES: selectedItem,
+        status: selectedItem,
     },
   }
 
