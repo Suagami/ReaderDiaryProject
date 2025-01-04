@@ -35,6 +35,9 @@ def api_exception_handler(exc: Exception, context: dict[str, Any]) -> Response:
     if response is not None:
 
         for field, error in response.data.items():
-            error_payload = {"error": f'Некорректное значение {field}: {error[0]}'}
+            if field == 'detail':
+                error_payload = {"error": error}
+            else:
+                error_payload = {"error": f'Некорректное значение {field}: {error[0]}'}
             response.data = error_payload
             return response
