@@ -1,0 +1,17 @@
+.bookItemWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bookItemImage{
+    width: 170px;
+    height: 256px;
+    background-color: #d6d6d6;
+    border: 10px;
+}
+
+.bookName{
+    font-weight: bold;
+}
+

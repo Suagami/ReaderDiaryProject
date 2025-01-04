@@ -4,16 +4,16 @@ import React from 'react'
 import s from './SectionTitle.module.css'
 
 type SectionTitleProps = {
-    sectionTitle: string
     className?: string
+    sectionTitle: string
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = (props) => {
     const { sectionTitle, className } = props
 
-    return ( <div className={cx(className, s.title)}>
-        {sectionTitle}
-    </div>)
+        return ( <div className={cx(className, s.title)}>
+            {sectionTitle}
+        </div>)
 }
 
 export default SectionTitle
