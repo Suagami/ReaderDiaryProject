@@ -14,16 +14,13 @@ const DropDownButton: React.FC<DropDownButtonProps> = (props) => {
   const { className, title, isHaveIcon, state, toggle} = props
     return (
       <div  onClick={toggle} 
-            className={`${state ?
-                            s.closedButtonWrapper : 
-                            s.openedButtonWrapper}`}>
+            className={`${state ? s.closedButtonWrapper : s.openedButtonWrapper}`}>
         {title}
         {isHaveIcon &&
           <img
             className={s.image}
             alt="ButtonIcon"
-            src={`${state ? "../../../../../public/imges/DropDownMinus.png" :
-                            "../../../../../public/imges/DropDownPlus.png"}`}/>}
+            src={`${state ? "../../../../../public/imges/DropDownMinus.png" : "../../../../../public/imges/DropDownPlus.png"}`}/>}
         
       </div>
     )

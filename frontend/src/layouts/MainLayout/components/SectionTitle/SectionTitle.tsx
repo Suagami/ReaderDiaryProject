@@ -11,9 +11,11 @@ type SectionTitleProps = {
 const SectionTitle: React.FC<SectionTitleProps> = (props) => {
     const { sectionTitle, className } = props
 
-        return ( <div className={cx(className, s.title)}>
+    return ( 
+        <div className={cx(className, s.title)}>
             {sectionTitle}
-        </div>)
+        </div>
+    )
 }
 
 export default SectionTitle
