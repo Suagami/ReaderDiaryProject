@@ -76,6 +76,7 @@ const AddBookForm: React.FC = () => {
                     {
                         items.map(item => 
                             <DropDownRow
+                                key={item}
                                 item={item}
                                 setField={setSelectedItem}
                             />)
