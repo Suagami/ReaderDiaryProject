@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 
 import useQuery from '../../../hooks/useQuery'
@@ -7,6 +7,12 @@ import EmptyBookContainer from '../EmptyBookContainer/EmptyBookContainer'
 import BookItem from '../BookItem/BookItem'
 
 import s from './BookContainer.module.css'
+
+type Book = {
+  id: number;
+  title: string;
+  author: string;
+};
 
 type BookContainerProps = {
   route: string
@@ -25,26 +31,19 @@ const BookContainer: React.FC<BookContainerProps> = (props) => {
           hasShowAll = true,
           hasStyle = true} = props
 
-  const { customFetch, data, error, isFetching } = useQuery({
+  const { customFetch, data, error, isFetching } = useQuery<{ results: Book[] }>({
     url: `http://127.0.0.1:8000/api/books/?status=${status}`,
     method: 'GET',
   });
 
-  const [books, setBooks] = useState<{ id: number; title: string; author: string }[]>([]);
+  const books = useMemo(() => (data?.results ? data.results : []), [data]);
 
   useEffect(() => {
     customFetch();
   }, [customFetch]);
 
-  useEffect(() => {
-    if (data?.results && Array.isArray(data.results)) {
-        setBooks(data.results);
-    } else {
-        setBooks([]);
-    }
-}, [data]);
-
 if (isFetching) return <p>Загрузка...</p>;
+
 if (error) {
   return (
     <div className={s.error}>
@@ -64,7 +63,7 @@ if (error) {
             </div>}
         <div className={s.bookContainerWrapper}>
             {books.length > 0 ? (
-                books.slice(-viewedBooks).reverse().map((book: { id: number, title: string, author: string }) => (
+                books.slice(-viewedBooks).reverse().map((book) => (
                     <BookItem key={book.id} bookName={book.title} authorName={book.author} />
                 ))
             ) : (
@@ -73,6 +72,6 @@ if (error) {
         </div>
     </div>
   );
-}
+};
 
 export default BookContainer

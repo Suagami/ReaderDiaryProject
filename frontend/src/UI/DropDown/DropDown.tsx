@@ -31,6 +31,7 @@ const DropDown: React.FC<DropDownProps> = (props) => {
       <DropDownMenu
         contant={contant}
         state={open}
+        closeMenu={() => setOpen(false)}
       />
     </div>
   )
