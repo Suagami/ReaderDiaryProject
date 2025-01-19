@@ -2,7 +2,6 @@
     position: absolute;
     min-width: 100%;
     max-width: 40vh;
-    /* padding: 1rem; */
     margin-top: 0.5rem;
 
     display: flex;
@@ -26,19 +25,6 @@
 
 .closedDropDownMenuWrapper{
     position: absolute;
-    min-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    background-color: #f6efe1;
-    border-radius: 10px;
-    max-width: 40vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    pointer-events: none;
     opacity: 0;
 }
 

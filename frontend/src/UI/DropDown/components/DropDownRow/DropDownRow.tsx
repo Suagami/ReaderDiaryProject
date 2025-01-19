@@ -4,8 +4,9 @@ import s from './DropDownRow.module.css'
 
 type DropDownRowProps = {
     className?: string
+    key: string
     item: string
-    setField: (value: string) => void
+    setField: React.Dispatch<React.SetStateAction<string>>
     closeMenu: () => void
 }
 
@@ -18,10 +19,9 @@ const DropDownRow: React.FC<DropDownRowProps> = (props) => {
   }
 
   return (
-    <div className={s.dropDownRowWrapper}
-        onClick={handleClick}>
-          {item}
-        <img className={s.checkedItemIcon} src="../../../../../public/imges/ok.png" alt="ok.png" />
+    <div className={s.dropDownRowWrapper} onClick={handleClick}>
+      {item}
+      <img className={s.checkedItemIcon} src="../../../../../public/imges/ok.png" alt="ok.png" />
     </div>
   )
 }

@@ -71,7 +71,7 @@ const AddBookForm: React.FC = () => {
             className={s.dropDownWrapper}
             title={`${selectedItemField ? selectedItemField : "Добавить"}`}
             isHaveIcon={true}
-            contant={
+            contant={(closeDropDown) => (
                 <>
                     {
                         items.map(item => 
@@ -79,10 +79,11 @@ const AddBookForm: React.FC = () => {
                                 key={item}
                                 item={item}
                                 setField={setSelectedItem}
+                                closeMenu={closeDropDown}
                             />)
                     }
                 </>
-            }
+            )}
         />
         <Link to={`${linkTo()}`}>
         <Button

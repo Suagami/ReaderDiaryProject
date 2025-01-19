@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useRef, useEffect }  from 'react'
 
 import DropDownButton from './components/DropDownButton/DropDownButton'
 import DropDownMenu from './components/DropDownMenu/DropDownMenu'
@@ -9,16 +9,17 @@ type DropDownProps = {
   className?: string
   title?: string
   isHaveIcon: boolean
-  contant: any
+  contant: (closeMenu: () => void) => React.ReactNode
 }
 
 const DropDown: React.FC<DropDownProps> = (props) => {
   const { className, title, isHaveIcon, contant } = props
+
   const [open, setOpen] = useState(false)
-  
-  const toggleDropDown = () => {
-    setOpen((open) => !open)
-  }
+
+  const toggleDropDown = () => setOpen((open) => !open);
+  const closeDropDown = () => setOpen(false);
+
   
   return (
     <div className={s.dropDownWrapper}>
@@ -28,11 +29,11 @@ const DropDown: React.FC<DropDownProps> = (props) => {
         state={open}
         toggle={toggleDropDown}
       />
-      <DropDownMenu
-        contant={contant}
-        state={open}
-        closeMenu={() => setOpen(false)}
-      />
+      {open &&(
+        <DropDownMenu
+          contant={contant(closeDropDown)}
+          state={open}
+      />)}
     </div>
   )
 }
