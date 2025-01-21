@@ -1,4 +1,12 @@
 .lightBeigeButton {
+  background-color: rgba(246, 239, 225, .5);
+  height: 38px;
+  width: 100%;
+  color: black;
+  font-size: 18px;
+  border-radius: 10px;
+  font-family: 'Raleway';
+  font-style: normal;
 }
 
 .gradientButtonWrapper {
