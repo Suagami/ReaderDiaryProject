@@ -1,9 +1,9 @@
 import React from 'react'
 
-import NotDataComponent from '../components/NotDataComponent/NotDataComponent'
+import DataComponent from '../components/DataComponent/DataComponent'
 
 const ReadNowPage: React.FC = () => {
-  return <NotDataComponent />
+  return <DataComponent hasStyle={false} status='reading' sectionTitle='Читаю сейчас' />
 }
 
 export default ReadNowPage

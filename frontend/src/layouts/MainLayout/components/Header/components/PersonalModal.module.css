@@ -1,0 +1,24 @@
+.modalContantWrapper{
+    font-family: 'Raleway';
+    font-style: normal;
+    display: flex;
+    gap: 96px;
+}
+
+.profileMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 20%;
+}
+
+.parameterColumn{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.parameterInput{
+    background-color: rgba(246, 239, 225, .8);
+}
