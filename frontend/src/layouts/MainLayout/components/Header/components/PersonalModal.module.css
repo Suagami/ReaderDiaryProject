@@ -18,3 +18,7 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.parameterInput{
+    background-color: rgba(246, 239, 225, .8);
+}
