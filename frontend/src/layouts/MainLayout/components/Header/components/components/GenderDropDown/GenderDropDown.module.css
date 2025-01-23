@@ -1,0 +1,33 @@
+.dropDownWrapper {
+  position: relative;
+  border-top: 24px;
+  cursor: pointer;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+}
+
+.dropdownButtonWrapper {
+  border-radius: 24px;
+  padding: 16px 48px;
+  font-family: 'Raleway';
+  font-style: normal;
+  position: relative;
+}
+
+.dropdownElements {
+  position: absolute;
+  background-color: #efe1ca;
+  width: 100%;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  padding: 12px 0;
+  z-index: 10000;
+}
+
+.dropdownElements :hover {
+  background-color: #ad7d1d50;
+}
+
+.dropdownElement {
+  padding: 8px 48px;
+}

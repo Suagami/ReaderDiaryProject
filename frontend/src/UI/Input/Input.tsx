@@ -42,6 +42,7 @@ const Input: React.FC<InputProps> = (props) => {
         placeholder={placeholder}
         type={visibility ? 'text' : 'password'}
         onChange={(e) => setField(e.target.value)}
+        value={fieldValue ? fieldValue : ''}
       />
     </div>
   )
