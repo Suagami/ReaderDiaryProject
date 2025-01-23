@@ -12,3 +12,10 @@
   align-items: center;
   gap: 36px;
 }
+
+.addBook{
+  position: fixed;
+  top: 90%;
+  left: 80%;
+  width: 280px;
+}

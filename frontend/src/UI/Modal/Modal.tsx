@@ -20,9 +20,7 @@ const Modal: React.FC<ModalProps> = (props) => {
       {isOpen &&
         ReactDOM.createPortal(
           <>
-            {/* Overlay */}
             <div className={styles.overlay} onClick={closeModal}></div>
-            {/* Modal Window */}
             <div className={styles.modal}>
               <button className={styles.closeButton} onClick={closeModal}>
                 &times;

@@ -1,9 +1,10 @@
 import React from 'react'
 
-import NotDataComponent from '../components/NotDataComponent/NotDataComponent'
+import DataComponent from '../components/DataComponent/DataComponent'
+
 
 const LastReadPage: React.FC = () => {
-  return <NotDataComponent />
-}
+    return <DataComponent hasStyle={false} status='finished' sectionTitle='Прочитанное' />
+  }
 
 export default LastReadPage

@@ -1,0 +1,8 @@
+.parameterRowWrapper{
+  display: flex;
+  gap: 24px;
+}
+
+.title{
+  font-weight: bold;
+}
